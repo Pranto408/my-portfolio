@@ -14,16 +14,20 @@ function SkillBar({ name, level, delay = 0 }: SkillBarProps) {
   return (
     <div ref={ref} className="space-y-2">
       <div className="flex justify-between items-center">
-        <span className="font-body text-sm font-medium text-foreground">{name}</span>
+        <span className="font-body text-sm font-medium text-foreground">
+          {name}
+        </span>
         <span className="font-mono text-xs text-violet-400">{level}%</span>
       </div>
       <div className="h-1.5 bg-muted rounded-full overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           animate={inView ? { width: `${level}%` } : { width: 0 }}
-          transition={{ duration: 1.2, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 1.2, delay, ease: "easeOut" }}
           className="h-full rounded-full"
-          style={{ background: "linear-gradient(to right, #7c3aed, #4f46e5, #06b6d4)" }}
+          style={{
+            background: "linear-gradient(to right, #7c3aed, #4f46e5, #06b6d4)",
+          }}
         />
       </div>
     </div>

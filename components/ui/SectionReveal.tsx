@@ -28,7 +28,7 @@ export function SectionReveal({ children, className, delay = 0, direction = "up"
       variants={variants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      transition={{ duration: 0.7, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
+      transition={{ duration: 0.7, delay, ease: "easeOut" }}
       className={className}
     >
       {children}

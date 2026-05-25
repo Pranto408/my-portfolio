@@ -1,24 +1,26 @@
+// Line 1-22 — replace with:
 "use client";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { Mail, Download, ArrowRight, ExternalLink } from "lucide-react";
+import { Mail, Download, ArrowRight } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { socialLinks } from "@/lib/data";
-import Image from "next/image";
 
-const stagger = {
+const ease = [0.25, 0.46, 0.45, 0.94] as const;
+
+const stagger: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.12 } },
 };
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
 };
 
-const fadeRight = {
+const fadeRight: Variants = {
   hidden: { opacity: 0, x: -30 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } },
+  show: { opacity: 1, x: 0, transition: { duration: 0.7, ease } },
 };
 
 export function Hero() {
@@ -206,7 +208,7 @@ export function Hero() {
             transition={{
               duration: 1,
               delay: 0.4,
-              ease: [0.25, 0.46, 0.45, 0.94],
+              ease: "easeOut",
             }}
             className="relative flex items-center justify-center"
           >

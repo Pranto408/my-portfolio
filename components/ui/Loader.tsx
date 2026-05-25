@@ -22,7 +22,7 @@ export function Loader() {
       {loading && (
         <motion.div
           exit={{ opacity: 0, scale: 1.05 }}
-          transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center"
         >
           {/* Logo */}
@@ -35,7 +35,7 @@ export function Loader() {
             {/* <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center glow">
               <span className="font-display text-3xl font-bold text-white">P</span>
             </div> */}
-            <PremiumLogo/>
+            <PremiumLogo />
           </motion.div>
 
           {/* Name */}
